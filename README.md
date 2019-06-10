@@ -5,3 +5,19 @@
         go get -u golang.org/x/oauth2/google
     - Image manipulation library
         go get github.com/fogleman/gg
+
+# Configuration Details
+    "SourceImageName": "canyon.jpg",
+    "OutputFileName": "wallpaper.png",
+    "MarginRight": 400,
+    "MarginTop": 20,
+    "Width": 1920,
+    "Height": 981,
+    "PrintDate": true,
+    "TitleFont": "./Fonts/Roboto/Roboto-Bold.ttf",
+    "TitleFontSize": 18,
+    "ItemFontSize": 14,
+    "ItemFont": "./Fonts/Roboto/Roboto-Medium.ttf",
+    "TitleText": "Today's Calendar",
+    "ItemPadding": 25,
+    "GoogleCalendarID": "aaa@group.calendar.google.com"
