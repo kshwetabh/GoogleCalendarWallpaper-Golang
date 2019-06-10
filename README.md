@@ -1,4 +1,7 @@
 
+# Sample
+![sample](https://raw.githubusercontent.com/kshwetabh/GoogleCalendarWallpaper-Golang/master/output/wallpaper.png)
+
 # Install Dependencies:
     - Get the Google Calendar API Go client library and OAuth2 package using the following commands:
         go get -u google.golang.org/api/calendar/v3
@@ -20,7 +23,7 @@
     "ItemFont": "./Fonts/Roboto/Roboto-Medium.ttf",
     "TitleText": "Today's Calendar",
     "ItemPadding": 25,
-    "GoogleCalendarID": "aaa@group.calendar.google.com"
+    "GoogleCalendarID": "aaaa@group.calendar.google.com"
 
 # Canyon wallpaper taken from:
 [pexels.com](https://www.pexels.com/photo/canyon-arizona-1672813/)
