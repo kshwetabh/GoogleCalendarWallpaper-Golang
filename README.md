@@ -21,3 +21,6 @@
     "TitleText": "Today's Calendar",
     "ItemPadding": 25,
     "GoogleCalendarID": "aaa@group.calendar.google.com"
+
+# Canyon wallpaper taken from:
+[pexels.com](https://www.pexels.com/photo/canyon-arizona-1672813/)

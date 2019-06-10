@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 )
 
@@ -24,33 +23,18 @@ type config struct {
 }
 
 func main() {
-	// cfg := config{
-	// 	sourceImageName:  "canyon.jpg",
-	// 	outputFileName:   "wallpaper.png",
-	// 	marginRight:      300,
-	// 	marginTop:        50,
-	// 	width:            2560,
-	// 	height:           1440,
-	// 	printDate:        true,
-	// 	titleFont:        "./Fonts/Roboto/Roboto-Bold.ttf",
-	// 	titleFontSize:    18,
-	// 	itemFontSize:     14,
-	// 	itemFont:         "./Fonts/Roboto/Roboto-Medium.ttf",
-	// 	titleText:        "Today's Calendar",
-	// 	itemPadding:      25,
-	// 	googleCalendarID: "lts59adca39hk04r3vnlvir93s@group.calendar.google.com",
+	cfg := loadConfig()
+
+	// Test Data
+	// appointments := []string{
+	// 	"Call Sunny (2019-06-10)",
+	// 	"Parents Teacher Meet (2019-06-10)",
+	// 	"Pay Electricity Bill (2019-06-10)",
+	// 	"John's Birthday Reminder (2019-06-12)",
+	// 	"Pay Broadband Bill (2019-06-13)",
+	// 	"Pay SGSAO Maint. Charges (2019-06-14)",
 	// }
 
-	cfg := loadConfig()
-	// appointments := []string{
-	// 	"Call Sunny",
-	// 	"Parents Teacher Meet",
-	// 	"Pay LIC Premium",
-	// 	"Gautam's Happy Birthday",
-	// 	"Pay BESCOM Bill",
-	// 	"Pay SGSAO Maint. Charges",
-	// }
-	fmt.Println(cfg)
 	appointments := getGoogleAppointments(cfg)
 	writeAppointmentsToImage(appointments, cfg)
 }
