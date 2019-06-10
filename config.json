@@ -1,0 +1,16 @@
+{
+  "SourceImageName": "canyon.jpg",
+  "OutputFileName": "wallpaper.png",
+  "MarginRight": 400,
+  "MarginTop": 20,
+  "Width": 1920,
+  "Height": 981,
+  "PrintDate": true,
+  "TitleFont": "./Fonts/Roboto/Roboto-Bold.ttf",
+  "TitleFontSize": 18,
+  "ItemFontSize": 14,
+  "ItemFont": "./Fonts/Roboto/Roboto-Medium.ttf",
+  "TitleText": "Today's Calendar",
+  "ItemPadding": 25,
+  "GoogleCalendarID": "lts59adca39hk04r3vnlvir93s@group.calendar.google.com"
+}
