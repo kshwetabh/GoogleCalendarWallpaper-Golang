@@ -7,7 +7,6 @@ import (
 
 type config struct {
 	SourceImageDirectory string //directory containing wallpaper images
-	// SourceImageName  string  //name of source file
 	OutputImageDirectory string
 	MarginRight          float64 //margin from right to start appointments text
 	MarginTop            float64 //margin from top to start appointment title
@@ -26,8 +25,8 @@ func main() {
 	cfg := loadConfig()
 
 	// Test Data
-	appointments := getAppointmentsStub()
-	// appointments := getGoogleAppointments(cfg.GoogleCalendarID)
+	// appointments := getAppointmentsStub()
+	appointments := getGoogleAppointments(cfg.GoogleCalendarID)
 	writeAppointmentsToImage(appointments, cfg)
 }
 

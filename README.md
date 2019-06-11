@@ -10,12 +10,10 @@
         go get github.com/fogleman/gg
 
 # Configuration Details
-    "SourceImageName": "canyon.jpg",
-    "OutputFileName": "wallpaper.png",
+    "SourceImageDirectory": "C:\\Dev\\GoProgramming\\src\\github.com\\ksfnu\\calendar_wallpaper\\input",
+    "OutputImageDirectory": "C:\\Dev\\GoProgramming\\src\\github.com\\ksfnu\\calendar_wallpaper\\output",
     "MarginRight": 400,
-    "MarginTop": 20,
-    "Width": 1920,
-    "Height": 981,
+    "MarginTop": 50,
     "PrintDate": true,
     "TitleFont": "./Fonts/Roboto/Roboto-Bold.ttf",
     "TitleFontSize": 18,
@@ -23,7 +21,7 @@
     "ItemFont": "./Fonts/Roboto/Roboto-Medium.ttf",
     "TitleText": "Today's Calendar",
     "ItemPadding": 25,
-    "GoogleCalendarID": "aaaa@group.calendar.google.com"
+    "GoogleCalendarID": "aaa@group.calendar.google.com"
 
-# Canyon wallpaper taken from:
-[pexels.com](https://www.pexels.com/photo/canyon-arizona-1672813/)
+# All Wallpapers taken from:
+[pexels.com](https://www.pexels.com/)
