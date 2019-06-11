@@ -9,8 +9,6 @@ type config struct {
 	SourceImageName  string  //name of source file
 	MarginRight      float64 //margin from right to start appointments text
 	MarginTop        float64 //margin from top to start appointment title
-	Width            int     //width and height of the wallpaper image
-	Height           int
 	PrintDate        bool
 	OutputFileName   string  //name of the target file
 	TitleFont        string  //controls appointment items font
@@ -26,15 +24,7 @@ func main() {
 	cfg := loadConfig()
 
 	// Test Data
-	// appointments := []string{
-	// 	"Call Sunny (2019-06-10)",
-	// 	"Parents Teacher Meet (2019-06-10)",
-	// 	"Pay Electricity Bill (2019-06-10)",
-	// 	"John's Birthday Reminder (2019-06-12)",
-	// 	"Pay Broadband Bill (2019-06-13)",
-	// 	"Pay SGSAO Maint. Charges (2019-06-14)",
-	// }
-
+	// appointments := getAppointmentsStub()
 	appointments := getGoogleAppointments(cfg)
 	writeAppointmentsToImage(appointments, cfg)
 }
@@ -54,4 +44,15 @@ func loadConfig() *config {
 		panic("parsing config: " + err.Error())
 	}
 	return cfg
+}
+
+func getAppointmentsStub() []string {
+	return []string{
+		"Call Sunny (2019-06-10)",
+		"Parents Teacher Meet (2019-06-10)",
+		"Pay Electricity Bill (2019-06-10)",
+		"John's Birthday Reminder (2019-06-12)",
+		"Pay Broadband Bill (2019-06-13)",
+		"Pay SGSAO Maint. Charges (2019-06-14)",
+	}
 }

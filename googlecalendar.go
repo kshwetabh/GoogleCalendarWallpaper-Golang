@@ -16,6 +16,9 @@ import (
 )
 
 func getGoogleAppointments(cfg *config) []string {
+
+	log.Println("Fetching appointments from Google API...")
+
 	b, err := ioutil.ReadFile("credentials.json")
 	if err != nil {
 		log.Fatalf("Unable to read client secret file: %v", err)
@@ -44,8 +47,9 @@ func getGoogleAppointments(cfg *config) []string {
 	appointments := []string{}
 
 	if len(events.Items) == 0 {
-		fmt.Println("No upcoming events found.")
+		log.Println("No upcoming events found.")
 	} else {
+		log.Println("List of appointments for the given CalendarID:")
 		for _, item := range events.Items {
 			date := item.Start.DateTime
 			if date == "" {
