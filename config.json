@@ -1,6 +1,8 @@
 {
   "SourceImageName": "canyon.jpg",
+  "SourceImageDirectory": "C:\\Dev\\GoProgramming\\src\\github.com\\ksfnu\\calendar_wallpaper\\input",
   "OutputFileName": "wallpaper.png",
+  "OutputImageDirectory": "C:\\Dev\\GoProgramming\\src\\github.com\\ksfnu\\calendar_wallpaper\\output",
   "MarginRight": 400,
   "MarginTop": 50,
   "PrintDate": true,

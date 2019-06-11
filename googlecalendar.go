@@ -15,7 +15,7 @@ import (
 	"google.golang.org/api/calendar/v3"
 )
 
-func getGoogleAppointments(cfg *config) []string {
+func getGoogleAppointments(googleCalendarID string) []string {
 
 	log.Println("Fetching appointments from Google API...")
 
@@ -37,7 +37,7 @@ func getGoogleAppointments(cfg *config) []string {
 	}
 
 	t := time.Now().Format(time.RFC3339)
-	events, err := srv.Events.List(cfg.GoogleCalendarID).ShowDeleted(false).
+	events, err := srv.Events.List(googleCalendarID).ShowDeleted(false).
 		SingleEvents(true).TimeMin(t).MaxResults(10).OrderBy("startTime").Do()
 	if err != nil {
 		log.Fatalf("Unable to retrieve next ten of the user's events: %v", err)

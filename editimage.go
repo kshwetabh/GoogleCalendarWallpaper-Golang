@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"image/color"
 	"log"
+	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/fogleman/gg"
@@ -11,9 +13,40 @@ import (
 
 func writeAppointmentsToImage(appointments []string, cfg *config) {
 	log.Println("Overlaying the appointment list on the wallpaper...")
-	im, err := gg.LoadImage(cfg.SourceImageName)
+
+	var files []string
+	if len(cfg.SourceImageDirectory) > 0 {
+		files = getImageList(cfg.SourceImageDirectory)
+	}
+	// log.Println("got image list", files)
+
+	for _, filename := range files {
+		writeToImage(filename, appointments, cfg)
+	}
+	log.Println("Wallpaper updated with the appointments...")
+}
+
+func getImageList(root string) []string {
+	var files []string
+
+	// log.Printf("Loading wallpapers from %s\n", root)
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if !info.IsDir() {
+			files = append(files, info.Name())
+		}
+		return nil
+	})
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
+	}
+	return files
+}
+
+func writeToImage(filename string, appointments []string, cfg *config) {
+	// log.Printf("Loading image %s\n", filename)
+	im, err := gg.LoadImage(filepath.Join(cfg.SourceImageDirectory, filename))
+	if err != nil {
+		log.Fatal("error loading image", err)
 	}
 
 	height := im.Bounds().Dy()
@@ -61,6 +94,7 @@ func writeAppointmentsToImage(appointments []string, cfg *config) {
 		dc.DrawStringAnchored(fmt.Sprintf("%d. %s", index+1, appt), float64(width)-cfg.MarginRight, i, 0, 0)
 	}
 	dc.Clip()
-	dc.SavePNG("./output/" + cfg.OutputFileName)
-	log.Println("Wallpaper updated with the appointments...")
+	log.Printf("Writing images to: %s\n", filepath.Join(cfg.OutputImageDirectory, filename))
+	dc.SavePNG(filepath.Join(cfg.OutputImageDirectory, filename))
+
 }

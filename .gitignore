@@ -2,3 +2,4 @@ credentials.json
 token.json
 *.exe
 config.json
+output
