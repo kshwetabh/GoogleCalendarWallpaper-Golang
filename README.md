@@ -1,6 +1,6 @@
 
 # Sample
-![sample](https://raw.githubusercontent.com/kshwetabh/GoogleCalendarWallpaper-Golang/master/output/wallpaper.png)
+![sample](https://raw.githubusercontent.com/kshwetabh/GoogleCalendarWallpaper-Golang/master/wallpaper.png)
 
 # Install Dependencies:
     - Get the Google Calendar API Go client library and OAuth2 package using the following commands:
