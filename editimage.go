@@ -72,7 +72,7 @@ func writeToImage(filename string, appointments []string, cfg *config) {
 	//Draw Title Text
 	titleText := cfg.TitleText
 	if cfg.PrintDate == true {
-		titleText += fmt.Sprintf(" ( %s )", time.Now().Format("Mon, 02-June"))
+		titleText += fmt.Sprintf(" ( %s )", time.Now().Format("Mon, 02-Jan"))
 	}
 	dc.DrawStringAnchored(titleText, float64(width)-cfg.MarginRight, cfg.MarginTop, 0, 0)
 
